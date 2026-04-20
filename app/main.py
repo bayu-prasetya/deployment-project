@@ -12,7 +12,7 @@ def root():
 def health():
     return {"status": "ok"}
 
-@app.post("/predict")
+@app.post("/predict", response_model=None)
 def get_prediction(request: PredictionRequest):
     try:
         result = predict(request.dict())

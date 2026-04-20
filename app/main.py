@@ -12,10 +12,10 @@ def root():
 def health():
     return {"status": "ok"}
 
-@app.post("/predict", response_model=None)
-def get_prediction(request: PredictionRequest):
+@app.post("/predict")
+def get_prediction(request: dict):
     try:
-        result = predict(request.dict())
+        result = predict(request)
         return {"prediction": result.tolist()}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))

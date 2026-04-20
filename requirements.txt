@@ -4,3 +4,4 @@ imbalanced-learn==0.14.1
 feature_engine==1.9.3
 fastapi==0.136.0
 pydantic==2.13.2
+uvicorn==0.44.0

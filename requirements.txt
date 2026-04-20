@@ -1,0 +1,6 @@
+scikit-learn==1.8.0
+pandas==2.3.3
+imbalanced-learn==0.14.1
+feature_engine==1.9.3
+fastapi==0.136.0
+pydantic==2.13.2

@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from model.predict import predict
-from app.schema import PredictionRequest
-from typing import List
+from typing import List, Dict
 
 app = FastAPI(title="ML API")
 
@@ -14,7 +13,7 @@ def health():
     return {"status": "ok"}
 
 @app.post("/predict")
-def get_prediction(request: List[PredictionRequest]):
+def get_prediction(request: List[Dict]):
     try:
         result = predict(request)
         return {"prediction": result.tolist()}
@@ -22,7 +21,7 @@ def get_prediction(request: List[PredictionRequest]):
         raise HTTPException(status_code=400, detail=str(e))
 
 @app.post("/predict_proba")
-def get_prediction_proba(request: List[PredictionRequest]):
+def get_prediction_proba(request: List[Dict]):
     try:
         result = predict(request, proba=True)
         return {"prediction": result.tolist()}

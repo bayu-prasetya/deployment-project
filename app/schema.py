@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel
 
 class InsuranceClaim(BaseModel):
@@ -28,4 +28,4 @@ class InsuranceClaim(BaseModel):
     vehicle_weight: float
 
 class PredictionRequest(BaseModel):
-    records: list[InsuranceClaim]
+    records: List[InsuranceClaim]

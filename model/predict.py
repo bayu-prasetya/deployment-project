@@ -20,8 +20,8 @@ def validate_schema(df:pd.DataFrame):
     if list(df.columns) != EXPECTED_COLUMNS:
         raise ValueError(f"Invalid schema. Expected {EXPECTED_COLUMNS}")
     
-def predict(data:dict):
-    df = pd.DataFrame([data])
+def predict(data:list[dict], proba:bool=False):
+    df = pd.DataFrame(data)
     validate_schema(df)
     model = get_model()
-    return model.predict(df)
+    return model.predict_proba(df)[:,1] if proba else model.predict(df) 

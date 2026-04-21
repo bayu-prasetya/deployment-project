@@ -1,3 +1,5 @@
+import sys
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -7,6 +9,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from io import BytesIO
 from model.bundle import load_bundle
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # ── Page config ────────────────────────────────────────────────────────────
 st.set_page_config(

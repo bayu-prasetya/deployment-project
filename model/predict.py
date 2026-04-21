@@ -1,7 +1,10 @@
 import pickle
 import pandas as pd
 from typing import List, Dict
+import sys
+import os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 _model = None
 EXPECTED_COLUMNS = ['claim_number','age_of_driver','gender',
                     'marital_status','safty_rating','annual_income',

@@ -1,5 +1,6 @@
 import pickle
 import pandas as pd
+from typing import List, Dict
 
 _model = None
 EXPECTED_COLUMNS = ['claim_number','age_of_driver','gender',
@@ -20,7 +21,7 @@ def validate_schema(df:pd.DataFrame):
     if list(df.columns) != EXPECTED_COLUMNS:
         raise ValueError(f"Invalid schema. Expected {EXPECTED_COLUMNS}")
     
-def predict(data:list[dict], proba:bool=False):
+def predict(data:List[Dict], proba:bool=False):
     df = pd.DataFrame(data)
     validate_schema(df)
     model = get_model()

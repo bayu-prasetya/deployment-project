@@ -1,7 +1,7 @@
 from typing import Optional, List
 from pydantic import BaseModel
 
-class InsuranceClaim(BaseModel):
+class PredictionRequest(BaseModel):
     claim_number: int
     age_of_driver: int
     gender: str
@@ -26,6 +26,3 @@ class InsuranceClaim(BaseModel):
     vehicle_price: float
     vehicle_color: str
     vehicle_weight: float
-
-class PredictionRequest(BaseModel):
-    records: List[InsuranceClaim]

@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from  bundle import build_bundle, save_bundle
 import pickle
 import pandas as pd

@@ -14,7 +14,7 @@ EXPECTED_COLUMNS = ['claim_number','age_of_driver','gender',
 def get_model():
     global _model
     if _model is None:
-        _model = pickle.load(open('model/model_v1.sav','rb'))
+        _model = pickle.load(open('model/artifacts/model_v1.sav','rb'))
     return _model
 
 def validate_schema(df:pd.DataFrame):
